@@ -17,6 +17,22 @@ let createuser_lastname = document.getElementById('createuser_lastname');
 let createuser_mail = document.getElementById('createuser_mail');
 let createuser_btn = document.getElementById('createuser_btn');
 
+//test authentication
+
+let test_auth = document.getElementById("Test_Auth");
+test_auth.addEventListener("click", function(){
+   fetch(newRequest("GET", "/testauth", {
+		username: ""
+	})).then(res => {
+	    if (res.status === 201) {
+			console.log("Basic Auth Test, ok!");
+		}
+	}).catch(err => {
+	    printError(err);
+	}); 
+});
+
+
 userinfo_btn.addEventListener("click", () => {
 	getUser(userinfo_input.value);
 });

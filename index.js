@@ -15,6 +15,7 @@ app.enable('trust proxy');
 
 // Get
 app.get('/user', db.getUser, ut.logEvent);
+app.get('/testauth', db.getTestAuth, ut.logEvent);
 
 // Post
 app.post('/user', db.newUser, ut.logEvent);

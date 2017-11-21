@@ -161,10 +161,18 @@ function newUser(req, res, next) {
         res.status(403).end();
     }
 }
-
+//test auth
+function getTestAuth(req, res, next) {
+    var auth = require('basic-auth');
+    var user = auth(req);
+    ut.print(user);
+};
+    
+    
 module.exports = {
     getUser : getUser,
     loginUser : loginUser,
     setLastlogin : setLastlogin,
-    newUser : newUser
+    newUser : newUser,
+    getTestAuth : getTestAuth
 }
